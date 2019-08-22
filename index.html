@@ -15,6 +15,7 @@ mixpanel.init("6888bfdec29d84ab2d36ae18c57b8535", {debug: true});</script><!-- e
     <input type="text" id="input1" />
     <button id="dummyBtn">Dummy button</button>
     <script>
+      mixpanel.track('Page view');
       document.getElementById("input1").addEventListener("change", function() {
         mixpanel.identify(this.value);
         mixpanel.people.set("Last identified", String(new Date()));
