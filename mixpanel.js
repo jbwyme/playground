@@ -5050,7 +5050,7 @@
         // check notifications against events that were tracked before decide call completed
         var events = this._events_tracked_before_user_decide_check_complete;
         while (events.length > 0) {
-            var data = events.unshift(); // replay in the same order they came in
+            var data = events.shift(); // replay in the same order they came in
             this._check_and_handle_triggered_notifications(data);
         }
     };
