@@ -24,6 +24,7 @@
 		608373AF23BFF71E00D9BAD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		608373B223BFF71E00D9BAD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		608373B423BFF71E00D9BAD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		608373BA23BFF93C00D9BAD4 /* Swift Playground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Swift Playground.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		608373A523BFF71A00D9BAD4 /* Swift Playground */ = {
 			isa = PBXGroup;
 			children = (
+				608373BA23BFF93C00D9BAD4 /* Swift Playground.entitlements */,
 				608373A623BFF71A00D9BAD4 /* AppDelegate.swift */,
 				608373A823BFF71A00D9BAD4 /* SceneDelegate.swift */,
 				608373AA23BFF71A00D9BAD4 /* ViewController.swift */,
@@ -284,7 +286,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Swift Playground/Swift Playground.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SP3ACX54VS;
 				INFOPLIST_FILE = "Swift Playground/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +305,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Swift Playground/Swift Playground.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SP3ACX54VS;
 				INFOPLIST_FILE = "Swift Playground/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
