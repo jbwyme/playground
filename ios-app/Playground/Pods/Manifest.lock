@@ -1,0 +1,16 @@
+PODS:
+  - Mixpanel (3.5.0)
+
+DEPENDENCIES:
+  - Mixpanel (from `/Users/joshwymer/mixpanel-iphone/`)
+
+EXTERNAL SOURCES:
+  Mixpanel:
+    :path: "/Users/joshwymer/mixpanel-iphone/"
+
+SPEC CHECKSUMS:
+  Mixpanel: 8e6fe318b915a087855166d784c08bbb0668f266
+
+PODFILE CHECKSUM: a6c42905cd16b002f8bc167c2bfcca3f93fce662
+
+COCOAPODS: 1.7.5

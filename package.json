@@ -1,0 +1,11 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jbwyme/playground.git",
+  "author": "Josh Wymer <wymetyme@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "liquidjs": "^9.2.0"
+  }
+}
