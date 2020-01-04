@@ -7,17 +7,62 @@
 //
 
 import UIKit
+import UserNotifications
+import Mixpanel
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        let mixpanel = Mixpanel.initialize(token: "6888bfdec29d84ab2d36ae18c57b8535")
+        mixpanel.identify(distinctId: "josh.wymer@mixpanel.com")
+        mixpanel.track(event: "Tracked Event from Swift!")
+        mixpanel.people.set(property:"using swift", to:true)
+        mixpanel.flush()
+        
+       UNUserNotificationCenter.current()
+          .requestAuthorization(options: [.alert, .sound, .badge]) {
+            [weak self] granted, error in
+              
+            print("Permission granted: \(granted)")
+            guard granted else { return }
+            
+            UNUserNotificationCenter.current().getNotificationSettings { settings in
+                print("Notification settings: \(settings)")
+                
+                guard settings.authorizationStatus == .authorized else { return }
+                print("dispatching registerForRemoteNotifications")
+                DispatchQueue.main.async {
+                  UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+        
         return true
     }
+    
+    func application(
+      _ application: UIApplication,
+      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        let mixpanel = Mixpanel.mainInstance()
+        mixpanel.people.addPushDeviceToken(deviceToken)
+        mixpanel.flush()
+        print("Device Token: \(token)")
+    }
 
+    func application(
+      _ application: UIApplication,
+        didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

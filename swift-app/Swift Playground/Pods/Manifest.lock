@@ -1,0 +1,18 @@
+PODS:
+  - Mixpanel-swift (2.6.7):
+    - Mixpanel-swift/Complete (= 2.6.7)
+  - Mixpanel-swift/Complete (2.6.7)
+
+DEPENDENCIES:
+  - Mixpanel-swift (from `/Users/joshwymer/mixpanel-swift/`)
+
+EXTERNAL SOURCES:
+  Mixpanel-swift:
+    :path: "/Users/joshwymer/mixpanel-swift/"
+
+SPEC CHECKSUMS:
+  Mixpanel-swift: 9118aa461d7ad4bb66718b0d4d826e6487bb0105
+
+PODFILE CHECKSUM: 5d614b2cf4807ee00d0d1c9992cdf246715e95d6
+
+COCOAPODS: 1.8.4
