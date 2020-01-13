@@ -13,16 +13,18 @@ import Mixpanel
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
         let mixpanel = Mixpanel.initialize(token: "6888bfdec29d84ab2d36ae18c57b8535")
+        mixpanel.showNotificationOnActive = true
+        mixpanel.loggingEnabled = true
         mixpanel.identify(distinctId: "josh.wymer@mixpanel.com")
         mixpanel.track(event: "Tracked Event from Swift!")
         mixpanel.people.set(property:"using swift", to:true)
         mixpanel.flush()
+        
+        
         
        UNUserNotificationCenter.current()
           .requestAuthorization(options: [.alert, .sound, .badge]) {
@@ -45,6 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
+    func applicationDidEnterBackground(_ application: UIApplication) {
+//        Mixpanel.mainInstance().reset()
+        print("RESET MIXPANEL")
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print("ENTER FOREGROUND")
+    }
+    
     func application(
       _ application: UIApplication,
       didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
@@ -55,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         mixpanel.people.addPushDeviceToken(deviceToken)
         mixpanel.flush()
         print("Device Token: \(token)")
+        mixpanel.showNotification()
     }
 
     func application(
