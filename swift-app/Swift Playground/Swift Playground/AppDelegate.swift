@@ -14,8 +14,7 @@ import Mixpanel
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        
+
         let mixpanel = Mixpanel.initialize(token: "6888bfdec29d84ab2d36ae18c57b8535")
         mixpanel.showNotificationOnActive = true
         mixpanel.loggingEnabled = true
@@ -23,9 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         mixpanel.track(event: "Tracked Event from Swift!")
         mixpanel.people.set(property:"using swift", to:true)
         mixpanel.flush()
-        
-        
-        
+
        UNUserNotificationCenter.current()
           .requestAuthorization(options: [.alert, .sound, .badge]) {
             [weak self] granted, error in
@@ -43,17 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 }
             }
         }
-        
         return true
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-//        Mixpanel.mainInstance().reset()
-        print("RESET MIXPANEL")
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        print("ENTER FOREGROUND")
     }
     
     func application(
@@ -75,6 +62,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("Failed to register: \(error)")
     }
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+           didReceive response: UNNotificationResponse,
+           withCompletionHandler completionHandler:
+             @escaping () -> Void) {
+        if MixpanelPushNotifications.isMixpanelPushNotification(response.notification) {
+            print("Handling Mixpanel push notification response...")
+            MixpanelPushNotifications.handleResponse(response: response, withCompletionHandler: completionHandler)
+        } else {
+            // not a Mixpanel push notification
+            print("Not a Mixpanel push notification.")
+        }
+    }
+
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
