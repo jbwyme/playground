@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		5545C68DE6148AAA9AF44BDD /* Pods_Swift_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F420DD1969523CFCFD78B90 /* Pods_Swift_Playground.framework */; };
 		608373A723BFF71A00D9BAD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608373A623BFF71A00D9BAD4 /* AppDelegate.swift */; };
-		608373A923BFF71A00D9BAD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608373A823BFF71A00D9BAD4 /* SceneDelegate.swift */; };
 		608373AB23BFF71A00D9BAD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608373AA23BFF71A00D9BAD4 /* ViewController.swift */; };
 		608373AE23BFF71A00D9BAD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608373AC23BFF71A00D9BAD4 /* Main.storyboard */; };
 		608373B023BFF71E00D9BAD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 608373AF23BFF71E00D9BAD4 /* Assets.xcassets */; };
 		608373B323BFF71E00D9BAD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608373B123BFF71E00D9BAD4 /* LaunchScreen.storyboard */; };
 		608373C323C00DAC00D9BAD4 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608373C223C00DAC00D9BAD4 /* NotificationService.swift */; };
 		608373C723C00DAC00D9BAD4 /* NotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 608373C023C00DAC00D9BAD4 /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		608A9EF223CE62D800062BA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608A9EF123CE62D800062BA9 /* SceneDelegate.swift */; };
 		A4A2FE6DA37A514D4180E88C /* Pods_NotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2289242806269503992F5C /* Pods_NotificationServiceExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,6 @@
 		4500C9293FF7748CF1697070 /* Pods-NotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		608373A323BFF71A00D9BAD4 /* Swift Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		608373A623BFF71A00D9BAD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		608373A823BFF71A00D9BAD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		608373AA23BFF71A00D9BAD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		608373AD23BFF71A00D9BAD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		608373AF23BFF71E00D9BAD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		608373C023C00DAC00D9BAD4 /* NotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		608373C223C00DAC00D9BAD4 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		608373C423C00DAC00D9BAD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		608A9EF123CE62D800062BA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6CB7287C7B85BE32A90E40FC /* Pods-Swift Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Playground.release.xcconfig"; path = "Target Support Files/Pods-Swift Playground/Pods-Swift Playground.release.xcconfig"; sourceTree = "<group>"; };
 		C94E37ACFD3AEA226136FEEE /* Pods-NotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-NotificationServiceExtension/Pods-NotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,12 +129,12 @@
 			children = (
 				608373BA23BFF93C00D9BAD4 /* Swift Playground.entitlements */,
 				608373A623BFF71A00D9BAD4 /* AppDelegate.swift */,
-				608373A823BFF71A00D9BAD4 /* SceneDelegate.swift */,
 				608373AA23BFF71A00D9BAD4 /* ViewController.swift */,
 				608373AC23BFF71A00D9BAD4 /* Main.storyboard */,
 				608373AF23BFF71E00D9BAD4 /* Assets.xcassets */,
 				608373B123BFF71E00D9BAD4 /* LaunchScreen.storyboard */,
 				608373B423BFF71E00D9BAD4 /* Info.plist */,
+				608A9EF123CE62D800062BA9 /* SceneDelegate.swift */,
 			);
 			path = "Swift Playground";
 			sourceTree = "<group>";
@@ -318,7 +318,7 @@
 			files = (
 				608373AB23BFF71A00D9BAD4 /* ViewController.swift in Sources */,
 				608373A723BFF71A00D9BAD4 /* AppDelegate.swift in Sources */,
-				608373A923BFF71A00D9BAD4 /* SceneDelegate.swift in Sources */,
+				608A9EF223CE62D800062BA9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
