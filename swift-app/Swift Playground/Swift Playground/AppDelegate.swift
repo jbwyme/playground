@@ -23,9 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         mixpanel.people.set(property:"using swift", to:true)
         mixpanel.flush()
 
-       UNUserNotificationCenter.current()
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current()
           .requestAuthorization(options: [.alert, .sound, .badge]) {
-            [weak self] granted, error in
+            granted, error in
               
             print("Permission granted: \(granted)")
             guard granted else { return }
