@@ -6,6 +6,6 @@
   "author": "Josh Wymer <wymetyme@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "liquidjs": "^9.2.0"
+    "liquidjs": "^10.0.0"
   }
 }
